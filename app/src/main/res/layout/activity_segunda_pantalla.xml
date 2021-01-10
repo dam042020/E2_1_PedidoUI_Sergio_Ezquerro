@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SegundaPantalla">
+
+    <Toolbar
+        android:id="@+id/SP_Toolbar"
+        style="@style/Toolbars"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView style="@style/Title"/>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageButton
+                android:id="@+id/SP_IB_Thumb_Up"
+                style="@style/ImgBtn"
+                android:src="@drawable/ic_thumb_up"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:contentDescription="@string/go_to_third_screen"
+                android:onClick="goToThirdScreen"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </Toolbar>
+
+    <TextView
+        android:id="@+id/SP_tv_Delivery_Method"
+        style="@style/SP_Label"
+        android:text="@string/delivery_method"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/SP_Toolbar" />
+
+    <RadioGroup
+        android:id="@+id/SP_rg_Delivery_Method"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        app:layout_constraintEnd_toEndOf="@+id/SP_tv_Delivery_Method"
+        app:layout_constraintStart_toStartOf="@+id/SP_tv_Delivery_Method"
+        app:layout_constraintTop_toBottomOf="@+id/SP_tv_Delivery_Method"
+        app:layout_constraintBottom_toTopOf="@+id/SP_tv_Select_Pickup_Time">
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:text="@string/home_delivery" />
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/store_pickup" />
+    </RadioGroup>
+
+    <!--Time-->
+    <TextView
+        android:id="@+id/SP_tv_Select_Pickup_Time"
+        style="@style/SP_Label"
+        android:text="@string/select_delivery_time"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/SP_rg_Delivery_Method" />
+
+    <TextView
+        android:id="@+id/SP_tv_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="@style/SP_Value"
+        android:text="12:25"
+        android:onClick="selectTime"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/SP_tv_Select_Pickup_Time" />
+
+    <!--Date-->
+    <TextView
+        android:id="@+id/SP_tv_Select_Pickup_Date"
+        style="@style/SP_Label"
+        android:text="@string/select_delivery_date"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/SP_tv_time" />
+
+    <TextView
+        android:id="@+id/SP_tv_date"
+        style="@style/SP_Value"
+        android:text="22/11/2020"
+        android:onClick="selectDate"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/SP_tv_Select_Pickup_Date" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

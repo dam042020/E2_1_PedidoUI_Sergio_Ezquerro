@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <!--Toolbar: Titulo, Carrito y Papelera-->
+    <Toolbar
+        android:id="@+id/MA_Toolbar"
+        style="@style/Toolbars"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView style="@style/Title"/>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <!--Papelera (Resetea counts)-->
+            <ImageButton
+                android:id="@+id/MA_IB_Bin"
+                style="@style/ImgBtn"
+                android:contentDescription="@string/reset_counters"
+                android:onClick="resetCofeeCounts"
+                android:src="@drawable/ic_bin"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/MA_IB_Cart"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <!--Carrito (Envía a 2a pantalla)-->
+            <ImageButton
+                android:id="@+id/MA_IB_Cart"
+                style="@style/ImgBtn"
+                android:layout_marginEnd="20dp"
+                android:contentDescription="@string/go_to_second_screen"
+                android:src="@drawable/ic_cart"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:onClick="goToSegundaPantalla"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </Toolbar>
+
+    <!--Bloque botones 1-->
+    <TextView
+        android:id="@+id/MA_tv_black_cofee_label"
+        style="@style/Main_Label"
+        android:text="@string/black_coffee"
+        app:layout_constraintBaseline_toBaselineOf="@+id/MA_btn_black_coffee_subtract"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/MA_btn_black_coffee_subtract"
+        style="@style/Btn_Subtract"
+        android:onClick="subtract"
+        android:tag="black"
+        app:layout_constraintBottom_toTopOf="@+id/MA_btn_milk_coffee_subtract"
+        app:layout_constraintEnd_toStartOf="@+id/MA_tv_black_coffee_count"
+        app:layout_constraintTop_toBottomOf="@+id/MA_Toolbar" />
+
+    <TextView
+        android:id="@+id/MA_tv_black_coffee_count"
+        style="@style/Tv_count"
+        app:layout_constraintBaseline_toBaselineOf="@+id/MA_btn_black_coffee_subtract"
+        app:layout_constraintEnd_toStartOf="@+id/MA_btn_black_coffee_add" />
+
+    <Button
+        android:id="@+id/MA_btn_black_coffee_add"
+        style="@style/Main_Btn_Add"
+        android:onClick="add"
+        android:tag="black"
+        app:layout_constraintBaseline_toBaselineOf="@+id/MA_tv_black_coffee_count"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+
+    <!--Bloque botones 2-->
+    <TextView
+        android:id="@+id/MA_tv_milk_coffee_label"
+        style="@style/Main_Label"
+        android:text="@string/milk_coffee"
+        app:layout_constraintBaseline_toBaselineOf="@+id/MA_btn_milk_coffee_subtract"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/MA_btn_milk_coffee_subtract"
+        style="@style/Btn_Subtract"
+        android:onClick="subtract"
+        android:tag="milk"
+        app:layout_constraintBottom_toTopOf="@id/MA_btn_macchiato_coffee_subtract"
+        app:layout_constraintEnd_toStartOf="@+id/MA_tv_milk_coffee_count"
+        app:layout_constraintTop_toBottomOf="@id/MA_btn_black_coffee_subtract" />
+
+    <TextView
+        android:id="@+id/MA_tv_milk_coffee_count"
+        style="@style/Tv_count"
+        app:layout_constraintBaseline_toBaselineOf="@+id/MA_btn_milk_coffee_subtract"
+        app:layout_constraintEnd_toStartOf="@+id/MA_btn_milk_coffee_add" />
+
+    <Button
+        android:id="@+id/MA_btn_milk_coffee_add"
+        style="@style/Main_Btn_Add"
+        android:onClick="add"
+        android:tag="milk"
+        app:layout_constraintBaseline_toBaselineOf="@+id/MA_tv_milk_coffee_count"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+
+    <!--Bloque botones 3-->
+    <TextView
+        android:id="@+id/MA_tv_macchiato_coffee_label"
+        style="@style/Main_Label"
+        android:text="@string/macchiato_coffee"
+        app:layout_constraintBaseline_toBaselineOf="@+id/MA_btn_macchiato_coffee_subtract"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/MA_btn_macchiato_coffee_subtract"
+        style="@style/Btn_Subtract"
+        android:onClick="subtract"
+        android:tag="macchiato"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/MA_tv_macchiato_coffee_count"
+        app:layout_constraintTop_toBottomOf="@id/MA_btn_milk_coffee_subtract" />
+
+    <TextView
+        android:id="@+id/MA_tv_macchiato_coffee_count"
+        style="@style/Tv_count"
+        app:layout_constraintBaseline_toBaselineOf="@+id/MA_btn_macchiato_coffee_subtract"
+        app:layout_constraintEnd_toStartOf="@+id/MA_btn_macchiato_coffee_add" />
+
+    <Button
+        android:id="@+id/MA_btn_macchiato_coffee_add"
+        style="@style/Main_Btn_Add"
+        android:onClick="add"
+        android:tag="macchiato"
+        app:layout_constraintBaseline_toBaselineOf="@+id/MA_tv_macchiato_coffee_count"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

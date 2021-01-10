@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Others -->
+    <style name="Title">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">24sp</item>
+        <item name="fontFamily">Times New Roman</item>
+        <item name="android:textColor">@color/design_default_color_background</item>
+        <item name="android:text">@string/app_name</item>
+    </style>
+
+    <style name="ImgBtn">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+    </style>
+
+    <style name="Toolbars">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:background">@color/design_default_color_primary</item>
+    </style>
+
+
+    <!-- Count -->
+    <style name="Btn_Add_Subtract">
+        <item name="android:layout_width">40dp</item>
+        <item name="android:layout_height">50dp</item>
+        <item name="android:textAlignment">center</item>
+    </style>
+
+    <style name="Btn_Add" parent="Btn_Add_Subtract">
+        <item name="android:text">@string/add_sign</item>
+    </style>
+
+    <style name="Btn_Subtract" parent="Btn_Add_Subtract">
+        <item name="android:text">@string/subtract_sign</item>
+    </style>
+
+    <style name="Tv_count">
+        <item name="android:layout_width">30dp</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:text">@string/_0</item>
+    </style>
+
+    <!-- Main -->
+    <style name="Main_Btn_Add" parent="Btn_Add">
+        <item name="android:layout_marginEnd">40dp</item>
+    </style>
+
+    <style name="Main_Label">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">15sp</item>
+        <item name="android:layout_marginStart">40dp</item>
+    </style>
+
+    <!-- SP -->
+    <style name="SP_Value">
+        <item name="android:textColor">@color/design_default_color_primary</item>
+        <item name="fontFamily">Times New Roman</item>
+        <item name="android:layout_marginTop">20dp</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="SP_Label">
+        <item name="android:textSize">15sp</item>
+        <item name="android:layout_marginTop">20dp</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <!-- TP -->
+    <style name="TP_ET">
+        <item name="android:layout_width">200dp</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+</resources>

@@ -1,0 +1,33 @@
+<resources>
+    <string name="app_name" translatable="false">Entrega 2.1 Pedidos</string>
+    <string name="black_coffee">Black Coffee</string>
+    <string name="milk_coffee">Milk Coffee</string>
+    <string name="macchiato_coffee">Macchiato Coffee</string>
+    <string name="subtract_sign" translatable="false">-</string>
+    <string name="add_sign" translatable="false">+</string>
+    <string name="_0" translatable="false">0</string>
+    <string name="go_to_second_screen">Go to Second Screen</string>
+    <string name="reset_counters">Reset Counters</string>
+    <string name="go_to_third_screen">Go to Third Screen</string>
+    <string name="delivery_method">Delivery Method</string>
+    <string name="home_delivery">Home delivery</string>
+    <string name="store_pickup">Store pickup</string>
+    <string name="select_delivery_time">Select Delivery Time</string>
+    <string name="name">Name</string>
+    <string name="direction">Direction</string>
+    <string name="phone_number">Phone number</string>
+    <string name="alert_Title" />
+    <string name="alert_Message" />
+    <string name="cancel_button">No</string>
+    <string name="positive_button">Yes</string>
+    <string name="send_Email">Send E-Mail</string>
+    <string name="check_the_order">Check the order</string>
+    <string name="subject">Subject</string>
+    <string name="select_delivery_date">Select Delivery Date</string>
+    <string-array name="phone_types">
+        <item>Home</item>
+        <item>Work</item>
+        <item>Mobile</item>
+        <item>Other</item>
+    </string-array>
+</resources>

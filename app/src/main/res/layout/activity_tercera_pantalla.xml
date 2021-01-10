@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".TerceraPantalla">
+
+    <!-- Toolbar -->
+    <Toolbar
+        android:id="@+id/TP_Toolbar"
+        style="@style/Toolbars"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView style="@style/Title"/>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageButton
+                android:id="@+id/TP_IB_mail"
+                style="@style/ImgBtn"
+                android:src="@drawable/ic_email"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:contentDescription="@string/go_to_third_screen"
+                android:onClick="confirmarPedido"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </Toolbar>
+
+    <!-- Nombre -->
+    <TextView
+        android:id="@+id/TP_label_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:labelFor="@+id/TP_ET_name"
+        android:text="@string/name"
+        app:layout_constraintBaseline_toBaselineOf="@+id/TP_ET_name"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <EditText
+        android:id="@+id/TP_ET_name"
+        style="@style/TP_ET"
+        android:layout_marginTop="20dp"
+        android:autofillHints="@string/name"
+        android:inputType="text"
+        app:layout_constraintStart_toEndOf="@+id/TP_label_name"
+        app:layout_constraintTop_toBottomOf="@+id/TP_Toolbar" />
+
+    <!-- Direccion -->
+    <TextView
+        android:id="@+id/TP_label_dir"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:labelFor="@+id/TP_ET_dir"
+        android:text="@string/direction"
+        app:layout_constraintBaseline_toBaselineOf="@+id/TP_ET_dir"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <EditText
+        android:id="@+id/TP_ET_dir"
+        style="@style/TP_ET"
+        android:autofillHints="@string/direction"
+        android:inputType="textPostalAddress"
+        app:layout_constraintStart_toEndOf="@+id/TP_label_dir"
+        app:layout_constraintTop_toBottomOf="@+id/TP_ET_name" />
+
+    <!-- Telefono -->
+    <TextView
+        android:id="@+id/TP_label_tfn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:labelFor="@+id/TP_ET_tfn"
+        android:text="@string/phone_number"
+        app:layout_constraintBaseline_toBaselineOf="@+id/TP_ET_tfn"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <EditText
+        android:id="@+id/TP_ET_tfn"
+        style="@style/TP_ET"
+        android:layout_width="150dp"
+        android:autofillHints="@string/phone_number"
+        android:inputType="phone"
+        app:layout_constraintStart_toEndOf="@+id/TP_label_tfn"
+        app:layout_constraintTop_toBottomOf="@+id/TP_ET_dir" />
+
+    <Spinner
+        android:id="@+id/TP_spinner_phoneType"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@+id/TP_ET_tfn"
+        app:layout_constraintStart_toEndOf="@+id/TP_ET_tfn"
+        app:layout_constraintTop_toTopOf="@+id/TP_ET_tfn" >
+
+    </Spinner>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

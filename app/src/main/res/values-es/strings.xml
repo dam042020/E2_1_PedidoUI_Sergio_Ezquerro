@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="black_coffee">Café sólo</string>
+    <string name="milk_coffee">Café con leche</string>
+    <string name="macchiato_coffee">Café Cortado</string>
+    <string name="go_to_second_screen">Ir a la Segunda Pantalla</string>
+    <string name="reset_counters">Reiniciar Contadores</string>
+    <string name="go_to_third_screen">Ir a la Tercera Pantalla</string>
+    <string name="home_delivery">Reparto a domicilio</string>
+    <string name="delivery_method">Modo de entrega</string>
+    <string name="store_pickup">Recoger en local</string>
+    <string name="select_delivery_time">Seleccionar Hora de Entrega</string>
+    <string name="name">Nombre</string>
+    <string name="direction">Dirección</string>
+    <string name="phone_number">Teléfono</string>
+    <string name="alert_Title" />
+    <string name="alert_Message" >¿Está seguro de que quiere hacer el pedido?</string>
+    <string name="cancel_button">No</string>
+    <string name="positive_button">Sí</string>
+    <string name="send_Email">Enviar correo electrónico</string>
+    <string-array name="phone_types">
+        <item>Casa</item>
+        <item>Trabajo</item>
+        <item>Móvil</item>
+        <item>Otro</item>
+    </string-array>
+    <string name="check_the_order">Comprobar la orden</string>
+    <string name="select_delivery_date">Seleccionar Fecha de Entrega</string>
+</resources>
