@@ -13,17 +13,19 @@
     <string name="name">Nombre</string>
     <string name="direction">Dirección</string>
     <string name="phone_number">Teléfono</string>
-    <string name="alert_Title" />
+    <string name="alert_Title" >Confirmar Pedido</string>
     <string name="alert_Message" >¿Está seguro de que quiere hacer el pedido?</string>
     <string name="cancel_button">No</string>
     <string name="positive_button">Sí</string>
     <string name="send_Email">Enviar correo electrónico</string>
+    <string name="check_the_order">Comprobar la orden</string>
+    <string name="select_delivery_date">Seleccionar Fecha de Entrega</string>
+    <string name="please_select_delivery_method">Selecciona un modo de entrega</string>
     <string-array name="phone_types">
         <item>Casa</item>
         <item>Trabajo</item>
         <item>Móvil</item>
         <item>Otro</item>
     </string-array>
-    <string name="check_the_order">Comprobar la orden</string>
-    <string name="select_delivery_date">Seleccionar Fecha de Entrega</string>
+    <string name="fill_all_fields">Rellena todos los campos</string>
 </resources>

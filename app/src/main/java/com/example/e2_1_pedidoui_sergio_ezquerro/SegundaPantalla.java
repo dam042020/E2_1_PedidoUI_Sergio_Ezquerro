@@ -7,7 +7,10 @@ import android.app.TimePickerDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.Calendar;
 
@@ -24,7 +27,6 @@ public class SegundaPantalla extends AppCompatActivity {
     private static final String BARRA = "/";
 
 //Aux
-
     //Calendario (Obtener fecha & hora)
     public final Calendar c = Calendar.getInstance();
 
@@ -40,6 +42,8 @@ public class SegundaPantalla extends AppCompatActivity {
 //Elems
     TextView tvHora;
     TextView tvFecha;
+    RadioGroup rgEntrega;
+    RadioButton rbEntrega;
 
 //Cons
     @Override
@@ -49,13 +53,7 @@ public class SegundaPantalla extends AppCompatActivity {
 
         tvHora = findViewById(R.id.SP_tv_time);
         tvFecha = findViewById(R.id.SP_tv_date);
-
-        Intent intent = getIntent();
-        Bundle extras = intent.getExtras();
-
-        count_black = (int) extras.get("count_black");
-        count_macchiato = (int) extras.get("count_macchiato");
-        count_milk = (int) extras.get("count_milk");
+        rgEntrega = findViewById(R.id.SP_rg_Delivery_Method);
 
         // Asignar tvFecha
         {
@@ -63,7 +61,7 @@ public class SegundaPantalla extends AppCompatActivity {
             String diaFormateado = (dia < 10) ? CERO + (dia) : String.valueOf(dia);
 
             //Formateo mes
-            String mesFormateado = (mes < 10) ? CERO + (mes) : String.valueOf(mes);
+            String mesFormateado = (mes < 10) ? CERO + (mes+1) : String.valueOf(mes);
 
             String nuevaFecha = diaFormateado + BARRA + mesFormateado + BARRA + anio;
             tvFecha.setText(nuevaFecha);
@@ -81,22 +79,27 @@ public class SegundaPantalla extends AppCompatActivity {
             tvHora.setText(nuevaHora);
         }
 
-        //TODO Asignar nuevos campos a enviar
+        // Extras
+        Intent intent = getIntent();
+        Bundle extras = intent.getExtras();
+
+        count_black = (int) extras.get("count_black");
+        count_macchiato = (int) extras.get("count_macchiato");
+        count_milk = (int) extras.get("count_milk");
     }
 
-//Methods
-    public void goToThirdScreen(View view) {
-        Intent intent = new Intent(SegundaPantalla.this, TerceraPantalla.class);
+// Public Methods
+    public void click_ThumbUp(View view){
 
-        intent.putExtra("count_black",count_black);
-        intent.putExtra("count_macchiato",count_macchiato);
-        intent.putExtra("count_milk",count_milk);
-        //TODO Enviar nuevos campos
-        //intent.putExtra("","");
-        //intent.putExtra("","");
-        //intent.putExtra("","");
+        int selectedId = rgEntrega.getCheckedRadioButtonId();
+        rbEntrega = findViewById(selectedId);
 
-        startActivity(intent);
+        if (rbEntrega != null){
+            goToThirdScreen();
+        } else{
+            Toast.makeText(SegundaPantalla.this,
+                    R.string.please_select_delivery_method, Toast.LENGTH_SHORT).show();
+        }
     }
 
     public void selectTime(View view) {
@@ -135,4 +138,21 @@ public class SegundaPantalla extends AppCompatActivity {
         recogerFecha.show();
 
     }
+
+// Private Methods
+    private void goToThirdScreen() {
+        Intent intent = new Intent(SegundaPantalla.this, TerceraPantalla.class);
+
+        intent.putExtra("count_black",count_black);
+        intent.putExtra("count_macchiato",count_macchiato);
+        intent.putExtra("count_milk",count_milk);
+
+        intent.putExtra("delivery_method",rbEntrega.getText().toString());
+        intent.putExtra("date",tvFecha.getText().toString());
+        intent.putExtra("time",tvHora.getText().toString());
+
+        startActivity(intent);
+    }
+
+
 }

@@ -23,6 +23,7 @@
             <ImageButton
                 android:id="@+id/TP_IB_mail"
                 style="@style/ImgBtn"
+                android:layout_marginEnd="20dp"
                 android:src="@drawable/ic_email"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -97,6 +98,7 @@
         android:id="@+id/TP_spinner_phoneType"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:entries="@array/phone_types"
         app:layout_constraintBottom_toBottomOf="@+id/TP_ET_tfn"
         app:layout_constraintStart_toEndOf="@+id/TP_ET_tfn"
         app:layout_constraintTop_toTopOf="@+id/TP_ET_tfn" >

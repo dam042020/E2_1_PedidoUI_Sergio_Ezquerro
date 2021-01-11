@@ -22,12 +22,13 @@
             <ImageButton
                 android:id="@+id/SP_IB_Thumb_Up"
                 style="@style/ImgBtn"
+                android:layout_marginEnd="20dp"
                 android:src="@drawable/ic_thumb_up"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 android:contentDescription="@string/go_to_third_screen"
-                android:onClick="goToThirdScreen"/>
+                android:onClick="click_ThumbUp"/>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -54,7 +55,6 @@
         <RadioButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:checked="true"
             android:text="@string/home_delivery" />
 
         <RadioButton
@@ -77,7 +77,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         style="@style/SP_Value"
-        android:text="12:25"
         android:onClick="selectTime"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -95,7 +94,6 @@
     <TextView
         android:id="@+id/SP_tv_date"
         style="@style/SP_Value"
-        android:text="22/11/2020"
         android:onClick="selectDate"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
