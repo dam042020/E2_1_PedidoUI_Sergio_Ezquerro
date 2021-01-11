@@ -53,7 +53,7 @@ public class TerceraPantalla extends AppCompatActivity {
 
     //Methods
     public void confirmarPedido(View view) {
-        if (etTfn == null || etDir == null || etName == null){
+        if (etTfn.getText().toString().isEmpty() || etDir.getText().toString().isEmpty() || etName.getText().toString().isEmpty()){
             String msg = getResources().getString(R.string.fill_all_fields);
             Toast.makeText(getApplicationContext(), msg,
                     Toast.LENGTH_SHORT).show();
@@ -78,7 +78,7 @@ public class TerceraPantalla extends AppCompatActivity {
 
         intent.putExtra(Intent.EXTRA_EMAIL, new String[]{getString(R.string.my_email_adress)}); //destinatario
 
-        String langCode = Locale.getDefault().getDisplayLanguage();
+        String langCode = Locale.getDefault().getLanguage();
 
         if (langCode.equals("es")){
             intent.putExtra(Intent.EXTRA_SUBJECT, "Pedido de " + etName.getText().toString()); //sujeto del mensaje
